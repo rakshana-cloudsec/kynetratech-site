@@ -5,15 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kynetra Tech | Reliable Digital Systems</title>
 
-  <meta name="description" content="Kynetra Tech designs, fixes, and automates reliable email, infrastructure, and business workflows for growing businesses." />
+  <meta name="description" content="Kynetra Tech designs, fixes, and automates reliable email, infrastructure, and workflows for growing businesses." />
 
   <style>
     :root {
-      --text-main: #111;
-      --text-muted: #555;
+      --text-main: #0f172a;
+      --text-muted: #475569;
       --border-light: #e5e7eb;
-      --accent: #0f172a;
+      --accent: #0f2a44;
       --bg-light: #ffffff;
+      --bg-soft: #f8fafc;
     }
 
     * {
@@ -22,10 +23,10 @@
 
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text-main);
       background: var(--bg-light);
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
     a {
@@ -33,15 +34,21 @@
       text-decoration: none;
     }
 
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
     .container {
       max-width: 1100px;
       margin: auto;
-      padding: 80px 20px;
+      padding: 96px 20px;
     }
 
     /* NAV */
     header {
       border-bottom: 1px solid var(--border-light);
+      background: white;
     }
 
     .nav {
@@ -53,48 +60,72 @@
       justify-content: space-between;
     }
 
+    .nav strong {
+      font-size: 18px;
+    }
+
     .nav a {
       margin-left: 24px;
       font-size: 15px;
+      color: var(--text-muted);
     }
 
     .nav .cta {
-      padding: 10px 16px;
+      padding: 10px 18px;
       border: 1px solid var(--text-main);
-      border-radius: 6px;
+      border-radius: 8px;
       font-weight: 500;
+      color: var(--text-main);
     }
 
     /* HERO */
     .hero {
-      padding-top: 100px;
-      padding-bottom: 100px;
+      position: relative;
+      padding: 120px 20px;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(600px at 80% 20%, rgba(15,42,68,0.08), transparent 60%),
+        radial-gradient(500px at 10% 70%, rgba(15,42,68,0.05), transparent 60%);
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 1100px;
+      margin: auto;
     }
 
     .hero h1 {
-      font-size: 46px;
-      max-width: 700px;
-      line-height: 1.2;
+      font-size: 52px;
+      max-width: 720px;
+      line-height: 1.15;
+      margin-bottom: 24px;
     }
 
     .hero p {
-      font-size: 18px;
+      font-size: 19px;
       color: var(--text-muted);
-      max-width: 650px;
-      margin-top: 20px;
+      max-width: 680px;
     }
 
     .hero-actions {
-      margin-top: 32px;
+      margin-top: 36px;
     }
 
     .btn-primary {
-      padding: 12px 20px;
+      padding: 14px 24px;
       background: var(--accent);
       color: #fff;
-      border-radius: 6px;
-      margin-right: 16px;
+      border-radius: 10px;
+      margin-right: 20px;
       font-weight: 500;
+      display: inline-block;
     }
 
     .btn-secondary {
@@ -102,26 +133,31 @@
       color: var(--accent);
     }
 
-    /* SECTIONS */
-    section {
-      padding-top: 80px;
-      padding-bottom: 80px;
+    /* SECTION HEADINGS */
+    section h2 {
+      font-size: 34px;
+      margin-bottom: 20px;
     }
 
-    h2 {
-      font-size: 30px;
-      margin-bottom: 24px;
+    .section-subtext {
+      color: var(--text-muted);
+      max-width: 650px;
     }
 
     /* PROBLEMS */
+    .problems {
+      background: var(--bg-soft);
+    }
+
     .problems ul {
       list-style: none;
       padding: 0;
-      max-width: 700px;
+      max-width: 720px;
+      margin-top: 32px;
     }
 
     .problems li {
-      padding: 12px 0;
+      padding: 14px 0;
       border-bottom: 1px solid var(--border-light);
       color: var(--text-muted);
     }
@@ -130,63 +166,111 @@
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-      margin-top: 32px;
+      gap: 32px;
+      margin-top: 48px;
     }
 
     .service-card {
       border: 1px solid var(--border-light);
-      border-radius: 8px;
-      padding: 24px;
+      border-radius: 16px;
+      padding: 32px;
+      background: white;
     }
 
     .service-card h3 {
       margin-top: 0;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
+      font-size: 20px;
     }
 
     .service-card p {
       color: var(--text-muted);
     }
 
-    /* TRUST */
-    .trust p {
-      max-width: 700px;
-      color: var(--text-muted);
+    /* TEAM */
+    .team {
+      background: var(--bg-soft);
     }
 
-    /* AUDIENCE */
-    .audience ul {
-      list-style: none;
-      padding: 0;
+    .team-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-      color: var(--text-muted);
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 40px;
+      margin-top: 48px;
     }
 
-    /* CTA */
+    .team-card {
+      border: 1px solid var(--border-light);
+      border-radius: 18px;
+      padding: 32px;
+      text-align: center;
+      background: white;
+    }
+
+    .team-card img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 20px;
+    }
+
+    .team-card .role {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    /* REVIEWS */
+    .reviews-grid {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+    }
+
+    .reviews-grid img {
+      border-radius: 12px;
+      border: 1px solid var(--border-light);
+    }
+
+    /* FINAL CTA */
     .final-cta {
       text-align: center;
-      border-top: 1px solid var(--border-light);
-    }
-
-    .final-cta h2 {
-      margin-bottom: 12px;
+      padding: 120px 20px;
     }
 
     /* FOOTER */
-    footer {
-      border-top: 1px solid var(--border-light);
-      padding: 40px 20px;
-      text-align: center;
+    .site-footer {
+      background: #0f172a;
+      color: #e5e7eb;
+      padding: 72px 20px;
+    }
+
+    .footer-content {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .site-footer p {
+      color: #cbd5f5;
+    }
+
+    .footer-links a {
+      margin-right: 18px;
       font-size: 14px;
-      color: var(--text-muted);
+      color: #e5e7eb;
+    }
+
+    .footer-small {
+      margin-top: 32px;
+      font-size: 13px;
+      opacity: 0.8;
     }
 
     @media (max-width: 768px) {
       .hero h1 {
-        font-size: 36px;
+        font-size: 40px;
       }
     }
   </style>
@@ -194,101 +278,136 @@
 
 <body>
 
-  <!-- NAV -->
-  <header>
-    <div class="nav">
-      <strong>Kynetra Tech</strong>
-      <nav>
-        <a href="/email">Email</a>
-        <a href="/automation">Automation</a>
-        <a href="/contact" class="cta">Get in touch</a>
-      </nav>
-    </div>
-  </header>
+<header>
+  <div class="nav">
+    <strong>Kynetra Tech</strong>
+    <nav>
+      <a href="/email">Email</a>
+      <a href="/automation">Automation</a>
+      <a href="/contact" class="cta">Get in touch</a>
+    </nav>
+  </div>
+</header>
 
-  <!-- HERO -->
-  <main class="container hero">
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
     <h1>Reliable digital systems for growing businesses</h1>
     <p>
-      Kynetra Tech designs, fixes and automates email, infrastructure and workflows
-      that businesses rely on every day without breaking production.
+      Kynetra Tech designs, fixes and automates email, infrastructure
+      and workflows that businesses rely on every day without breaking production.
     </p>
 
     <div class="hero-actions">
       <a href="/contact" class="btn-primary">Talk to us</a>
       <a href="/email" class="btn-secondary">View services →</a>
     </div>
-  </main>
+  </div>
+</section>
 
-  <!-- PROBLEMS -->
-  <section class="container problems">
-    <h2>Problems we help businesses solve</h2>
-    <ul>
-      <li>Emails landing in spam or failing silently</li>
-      <li>Manual follow-ups and broken workflows</li>
-      <li>Automations built once and never maintained</li>
-      <li>Infrastructure issues discovered only after impact</li>
-    </ul>
-  </section>
+<!-- PROBLEMS -->
+<section class="container problems">
+  <h2>Problems we help businesses solve</h2>
+  <ul>
+    <li>Emails landing in spam or failing silently</li>
+    <li>Manual follow-ups and broken workflows</li>
+    <li>Automations built once and never maintained</li>
+    <li>Infrastructure issues discovered only after impact</li>
+  </ul>
+</section>
 
-  <!-- SERVICES -->
-  <section class="container services">
-    <h2>What we do?</h2>
+<!-- SERVICES -->
+<section class="container">
+  <h2>What we do</h2>
 
-    <div class="services-grid">
-      <div class="service-card">
-        <h3>Email Systems</h3>
-        <p>Design, development and deliverability for email that actually reaches inboxes.</p>
-        <a href="/email">Learn more →</a>
-      </div>
-
-      <div class="service-card">
-        <h3>Automation & Workflows</h3>
-        <p>Reliable CRM and non-CRM automation built to survive real usage.</p>
-        <a href="/automation">Learn more →</a>
-      </div>
-
-      <div class="service-card">
-        <h3>Business Infrastructure</h3>
-        <p>Quiet, stable systems that support operations without constant firefighting.</p>
-      </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <h3>Email Systems</h3>
+      <p>Design, development and deliverability for email that actually reaches inboxes.</p>
     </div>
-  </section>
 
-  <!-- TRUST -->
-  <section class="container trust">
-    <h2>Built for real production systems</h2>
-    <p>
-      We work on live production environments, taking a systems-first approach
-      with safe changes, monitoring and rollback in mind.
-      Our experience spans clients across Australia, the US, Europe and Asia.
+    <div class="service-card">
+      <h3>Automation & Workflows</h3>
+      <p>Reliable CRM and non-CRM automation built to survive real usage.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Business Infrastructure</h3>
+      <p>Quiet, stable systems that support operations without constant firefighting.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="container team">
+  <h2>The team behind Kynetra Tech</h2>
+
+  <div class="team-grid">
+    <div class="team-card">
+      <img src="/media/Rakshana.jpg" alt="Rakshana Kannaya Muralidharan">
+      <h3>Rakshana Kannaya Muralidharan</h3>
+      <p class="role">Cloud & Email Systems Engineer</p>
+      <p>
+        Works on live production systems focusing on email infrastructure,
+        automation and reliability for businesses.
+      </p>
+    </div>
+
+    <div class="team-card">
+      <img src="/media/Vignesh.jpeg" alt="Vignesh Mani">
+      <h3>Vignesh Mani</h3>
+      <p class="role">Security & Systems Engineer</p>
+      <p>
+        Focused on secure system design, monitoring and reliability with
+        a security-first engineering mindset.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="container">
+  <h2>What clients say</h2>
+  <p class="section-subtext">
+    Feedback from real clients across email, infrastructure and automation work.
+  </p>
+
+  <div class="reviews-grid">
+    <img src="/media/review1.png" alt="Client review 1">
+    <img src="/media/review2.png" alt="Client review 2">
+    <img src="/media/review3.png" alt="Client review 3">
+    <img src="/media/review4.png" alt="Client review 4">
+    <img src="/media/review5.png" alt="Client review 5">
+    <img src="/media/review6.png" alt="Client review 6">
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <h2>Let’s talk about your systems</h2>
+  <p class="section-subtext">Before small issues become big problems.</p>
+  <div style="margin-top:32px;">
+    <a href="/contact" class="btn-primary">Contact us</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-content">
+    <h3>Kynetra Tech</h3>
+    <p>Reliable digital systems for growing businesses.</p>
+
+    <div class="footer-links">
+      <a href="/email">Email</a>
+      <a href="/automation">Automation</a>
+      <a href="/contact">Contact</a>
+    </div>
+
+    <p class="footer-small">
+      © 2026 Kynetra Tech
     </p>
-  </section>
-
-  <!-- AUDIENCE -->
-  <section class="container audience">
-    <h2>Who we work with?</h2>
-    <ul>
-      <li>Small & mid-sized businesses</li>
-      <li>Real estate professionals</li>
-      <li>Service-based companies</li>
-      <li>Technical and non-technical founders</li>
-    </ul>
-  </section>
-
-  <!-- FINAL CTA -->
-  <section class="container final-cta">
-    <h2>Let’s talk about your systems</h2>
-    <p class="text-muted">Before small issues become big problems.</p>
-    <div style="margin-top:24px;">
-      <a href="/contact" class="btn-primary">Contact us</a>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    © 2026 Kynetra Tech
-  </footer>
+  </div>
+</footer>
 
 </body>
 </html>
