@@ -207,12 +207,19 @@
       background: white;
     }
 
-    .team-card img {
+    .team-photo {
       width: 120px;
       height: 120px;
       border-radius: 50%;
-      object-fit: cover;
+      overflow: hidden;
       margin: 0 auto 20px;
+    }
+
+    .team-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
     }
 
     .team-card .role {
@@ -294,7 +301,7 @@
   <div class="hero-content">
     <h1>Reliable digital systems for growing businesses</h1>
     <p>
-      Kynetra Tech designs, fixes and automates email, infrastructure
+      We design, fix, and automate email, infrastructure,
       and workflows that businesses rely on every day without breaking production.
     </p>
 
@@ -307,12 +314,12 @@
 
 <!-- PROBLEMS -->
 <section class="container problems">
-  <h2>Problems we help businesses solve</h2>
+  <h2>Problems we solve</h2>
   <ul>
     <li>Emails landing in spam or failing silently</li>
     <li>Manual follow-ups and broken workflows</li>
     <li>Automations built once and never maintained</li>
-    <li>Infrastructure issues discovered only after impact</li>
+    <li>Infrastructure issues discovered too late</li>
   </ul>
 </section>
 
@@ -344,22 +351,25 @@
 
   <div class="team-grid">
     <div class="team-card">
-      <img src="/media/Rakshana.jpg" alt="Rakshana Kannaya Muralidharan">
+      <div class="team-photo">
+        <img src="/media/Rakshana.jpg" alt="Rakshana Kannaya Muralidharan">
+      </div>
       <h3>Rakshana Kannaya Muralidharan</h3>
       <p class="role">Cloud & Email Systems Engineer</p>
       <p>
-        Works on live production systems focusing on email infrastructure,
-        automation and reliability for businesses.
+        Works on live production systems focusing on email infrastructure, automation and reliability for businesses.
       </p>
     </div>
 
     <div class="team-card">
-      <img src="/media/Vignesh.jpeg" alt="Vignesh Mani">
+      <div class="team-photo">
+        <img src="/media/Vignesh.jpeg" alt="Vignesh Mani">
+      </div>
       <h3>Vignesh Mani</h3>
       <p class="role">Security & Systems Engineer</p>
       <p>
-        Focused on secure system design, monitoring and reliability with
-        a security-first engineering mindset.
+        Focused on secure system design, monitoring and reliability
+        with a security-first engineering mindset.
       </p>
     </div>
   </div>
@@ -373,16 +383,16 @@
   </p>
 
   <div class="reviews-grid">
-    <img src="/media/review1.png" alt="Client review 1">
-    <img src="/media/review2.png" alt="Client review 2">
-    <img src="/media/review3.png" alt="Client review 3">
-    <img src="/media/review4.png" alt="Client review 4">
-    <img src="/media/review5.png" alt="Client review 5">
-    <img src="/media/review6.png" alt="Client review 6">
+    <img src="/media/review1.png">
+    <img src="/media/review2.png">
+    <img src="/media/review6.png">
+    <img src="/media/review4.png">
+    <img src="/media/review5.png">
+    <img src="/media/review3.png">
   </div>
 </section>
 
-<!-- FINAL CTA -->
+<!-- CTA -->
 <section class="final-cta">
   <h2>Let’s talk about your systems</h2>
   <p class="section-subtext">Before small issues become big problems.</p>
