@@ -288,25 +288,30 @@
   </div>
 </footer>
 
-  <script>
+<script>
+console.log("CONTACT SCRIPT LOADED");
+
 document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("contactForm");
-  const status = document.getElementById("formStatus");
+  const form = document.querySelector("form");
 
   if (!form) {
-    console.error("Contact form not found");
+    console.error("Form not found");
     return;
   }
 
+  console.log("Form found");
+
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
-    status.textContent = "Sending...";
+    console.log("Submit intercepted");
 
     const payload = {
-      name: document.getElementById("name").value.trim(),
-      email: document.getElementById("email").value.trim(),
-      message: document.getElementById("message").value.trim()
+      name: document.getElementById("name")?.value,
+      email: document.getElementById("email")?.value,
+      message: document.getElementById("message")?.value
     };
+
+    console.log("Payload:", payload);
 
     try {
       const res = await fetch(
@@ -318,13 +323,15 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       );
 
+      console.log("Response status:", res.status);
+
       if (!res.ok) throw new Error("Request failed");
 
-      status.textContent = "Thanks! We’ll get back to you shortly.";
+      alert("Message sent successfully");
       form.reset();
     } catch (err) {
-      console.error(err);
-      status.textContent = "Something went wrong. Please try again.";
+      console.error("Submit error:", err);
+      alert("Something went wrong");
     }
   });
 });
