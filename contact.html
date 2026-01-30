@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get in touch | Kynetra Tech</title>
+
+  <meta name="description" content="Get in touch with Kynetra Tech to discuss email systems, automation, or infrastructure reliability." />
+
+  <style>
+    :root {
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --border-light: #e5e7eb;
+      --accent: #0f2a44;
+      --bg-soft: #f8fafc;
+      --nav-bg: linear-gradient(135deg, #0f172a, #0f2a44);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text-main);
+      line-height: 1.65;
+      background: #ffffff;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 96px 20px;
+    }
+
+    /* ===== NAV ===== */
+    header {
+      background: var(--nav-bg);
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav strong {
+      font-size: 18px;
+      color: #ffffff;
+    }
+
+    .nav nav a {
+      margin-left: 24px;
+      font-size: 15px;
+      color: #e5e7eb;
+    }
+
+    .nav .cta {
+      background: #ffffff;
+      color: #0f172a;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: 500;
+    }
+
+    /* ===== PAGE HEADER ===== */
+    .page-hero {
+      background: var(--bg-soft);
+      padding: 96px 20px;
+    }
+
+    .page-hero h1 {
+      font-size: 44px;
+      margin-bottom: 16px;
+    }
+
+    .page-hero p {
+      color: var(--text-muted);
+      max-width: 620px;
+      font-size: 18px;
+    }
+
+    /* ===== CONTACT GRID ===== */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      margin-top: 64px;
+    }
+
+    /* INFO */
+    .contact-info h3 {
+      margin-top: 0;
+      font-size: 22px;
+    }
+
+    .contact-info p {
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    .contact-info ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .contact-info li {
+      margin-bottom: 14px;
+      font-size: 15px;
+    }
+
+    /* FORM */
+    .contact-form {
+      border: 1px solid var(--border-light);
+      border-radius: 16px;
+      padding: 32px;
+      background: white;
+    }
+
+    .contact-form label {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border-light);
+      font-size: 15px;
+      margin-bottom: 20px;
+      font-family: inherit;
+    }
+
+    .contact-form textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .contact-form button {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 14px 22px;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #0f172a;
+      color: #e5e7eb;
+      padding: 72px 20px;
+      margin-top: 120px;
+    }
+
+    .footer-content {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .footer-links a {
+      margin-right: 18px;
+      font-size: 14px;
+      color: #e5e7eb;
+    }
+
+    .footer-small {
+      margin-top: 32px;
+      font-size: 13px;
+      opacity: 0.8;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .page-hero h1 {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <strong>Kynetra Tech</strong>
+    <nav>
+      <a href="/email">Email</a>
+      <a href="/automation">Automation</a>
+      <a href="/contact" class="cta">Get in touch</a>
+    </nav>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <h1>Get in touch</h1>
+    <p>
+      Tell us a bit about your systems or challenges.
+      We’ll get back to you with clarity — not sales pressure.
+    </p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="container">
+  <div class="contact-grid">
+
+    <!-- INFO -->
+    <div class="contact-info">
+      <h3>What to expect</h3>
+      <p>
+        We usually respond within 24 hours.  
+        The first conversation is about understanding — not selling.
+      </p>
+
+      <ul>
+        <li>📧 Email systems & deliverability</li>
+        <li>⚙️ Automation & workflow design</li>
+        <li>🛡 Infrastructure reliability & security</li>
+      </ul>
+
+      <p>
+        Or email us directly at:  
+        <strong>hello@kynetratech.com</strong>
+      </p>
+    </div>
+
+    <!-- FORM -->
+    <div class="contact-form">
+      <!-- Replace action with Formspree later -->
+      <form>
+        <label>Name</label>
+        <input type="text" placeholder="Your name" required>
+
+        <label>Email</label>
+        <input type="email" placeholder="you@company.com" required>
+
+        <label>Message</label>
+        <textarea placeholder="Tell us what you’re looking to improve..."></textarea>
+
+        <button type="submit">Send message</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-content">
+    <h3>Kynetra Tech</h3>
+    <p>Reliable digital systems for growing businesses.</p>
+
+    <div class="footer-links">
+      <a href="/email">Email</a>
+      <a href="/automation">Automation</a>
+      <a href="/contact">Contact</a>
+    </div>
+
+    <p class="footer-small">
+      © 2026 Kynetra Tech
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
