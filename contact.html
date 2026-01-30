@@ -252,7 +252,7 @@
     <!-- FORM -->
     <div class="contact-form">
       <!-- Replace action with Formspree later -->
-      <form id="contactForm">
+      <form id="contactForm" novalidate>
          <label>Name</label>
          <input type="text" id="name" required>
 
@@ -264,7 +264,7 @@
 
          <button type="submit">Send message</button>
 
-         <p id="formStatus"></p>
+         <p id="formStatus" style="margin-top:12px;"></p>
       </form>
     </div>
 
@@ -289,40 +289,45 @@
 </footer>
 
   <script>
-const form = document.getElementById("contactForm");
-const status = document.getElementById("formStatus");
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contactForm");
+  const status = document.getElementById("formStatus");
 
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  status.textContent = "Sending...";
-
-  const payload = {
-    name: document.getElementById("name").value,
-    email: document.getElementById("email").value,
-    message: document.getElementById("message").value
-  };
-
-  try {
-    const res = await fetch(
-      "https://kynetratech-api.rakshana-tech-au.workers.dev",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload)
-      }
-    );
-
-    if (!res.ok) throw new Error();
-
-    status.textContent = "Thanks! We'll get back to you shortly.";
-    form.reset();
-
-  } catch {
-    status.textContent = "Something went wrong. Please try again.";
+  if (!form) {
+    console.error("Contact form not found");
+    return;
   }
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    status.textContent = "Sending...";
+
+    const payload = {
+      name: document.getElementById("name").value.trim(),
+      email: document.getElementById("email").value.trim(),
+      message: document.getElementById("message").value.trim()
+    };
+
+    try {
+      const res = await fetch(
+        "https://kynetratech-api.rakshana-tech-au.workers.dev",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        }
+      );
+
+      if (!res.ok) throw new Error("Request failed");
+
+      status.textContent = "Thanks! We’ll get back to you shortly.";
+      form.reset();
+    } catch (err) {
+      console.error(err);
+      status.textContent = "Something went wrong. Please try again.";
+    }
+  });
 });
 </script>
-
-
 </body>
 </html>
