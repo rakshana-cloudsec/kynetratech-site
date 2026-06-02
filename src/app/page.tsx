@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import ToolsMarquee from '@/components/ToolsMarquee';
 
 const tools = ['GoHighLevel', 'HubSpot', 'Zoho One', 'n8n', 'Make', 'Zapier', 'Xero', 'Slack', 'Microsoft 365', 'Google Workspace'];
 
@@ -78,27 +79,7 @@ export default function HomePage() {
       </section>
 
       {/* ── TRUST STRIP ── */}
-      <section style={{ borderBottom: '1px solid var(--frost)', borderTop: '1px solid var(--frost)', padding: '2.25rem 0', background: 'var(--white)' }}>
-        <div className="container">
-          <div style={{ display: 'flex', alignItems: 'center', gap: '2.5rem', flexWrap: 'wrap' }}>
-            <span className="label-slate" style={{ flexShrink: 0 }}>TOOLS WE BUILD WITH</span>
-            <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap' }}>
-              {tools.map((tool) => (
-                <span key={tool} style={{
-                  fontFamily: 'DM Mono, monospace',
-                  fontSize: '0.7rem',
-                  letterSpacing: '0.07em',
-                  color: 'var(--slate)',
-                  background: 'var(--sky-mist)',
-                  border: '1px solid var(--frost)',
-                  borderRadius: '2px',
-                  padding: '0.4rem 0.85rem',
-                }}>{tool}</span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+     <ToolsMarquee />
 
       {/* ── SERVICES ── */}
       <section className="section" id="services">
