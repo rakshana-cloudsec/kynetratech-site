@@ -39,7 +39,7 @@ export default function Footer() {
           <div>
             {/* Logo */}
            <img
-  src="/kt-logo.png"
+  src="/kt-footer-logo.png"
   alt="Kynetra Tech"
   style={{ height: '52px', width: 'auto', display: 'block', marginBottom: '1.25rem', filter: 'brightness(0) invert(1)' }}
 />
