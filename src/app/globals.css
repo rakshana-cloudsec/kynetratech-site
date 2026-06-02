@@ -5,14 +5,13 @@
 @tailwind utilities;
 
 :root {
-  /* Brand Colours */
   --white: #FFFFFF;
   --sky-mist: #EFF6FB;
   --deep-ink: #0B2A42;
   --teal: #1D9E75;
   --teal-dark: #158a63;
   --teal-light: rgba(29, 158, 117, 0.08);
-  --slate: #7A96A8;
+  --slate: #5A6A72;
   --frost: #D8E8F0;
   --frost-deep: #c4d8e8;
   --section-y: 7rem;
@@ -25,7 +24,7 @@ body {
   background-color: var(--white);
   color: var(--slate);
   font-family: 'Jost', system-ui, sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -35,24 +34,24 @@ body {
 h1, h2, h3, h4 {
   font-family: 'Tenor Sans', Georgia, serif;
   color: var(--deep-ink);
-  line-height: 1.08;
+  line-height: 1.1;
   font-weight: 400;
   letter-spacing: -0.01em;
 }
 
-h1 { font-size: clamp(3.5rem, 7vw, 6.5rem); }
-h2 { font-size: clamp(2.4rem, 4.5vw, 4rem); }
-h3 { font-size: clamp(1.3rem, 2vw, 1.75rem); }
+h1 { font-size: clamp(3.2rem, 6.5vw, 6rem); }
+h2 { font-size: clamp(2.2rem, 4vw, 3.5rem); }
+h3 { font-size: clamp(1.15rem, 1.8vw, 1.5rem); }
 
 p {
   font-family: 'Jost', system-ui, sans-serif;
   color: var(--slate);
   font-size: 1.05rem;
-  line-height: 1.8;
-  font-weight: 300;
+  line-height: 1.85;
+  font-weight: 400;
 }
 
-/* Italic accent for split headlines */
+/* Italic teal accent for split headlines */
 .headline-accent {
   font-family: 'Tenor Sans', Georgia, serif;
   font-style: italic;
@@ -96,15 +95,15 @@ p {
   background: var(--teal);
   color: var(--white);
   font-family: 'Jost', system-ui, sans-serif;
-  font-size: 0.88rem;
-  font-weight: 500;
+  font-size: 0.82rem;
+  font-weight: 600;
   padding: 0.9rem 2.25rem;
   border-radius: 2px;
   border: 2px solid var(--teal);
   cursor: pointer;
   transition: all 0.25s ease;
   text-decoration: none;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
@@ -122,15 +121,15 @@ p {
   background: transparent;
   color: var(--deep-ink);
   font-family: 'Jost', system-ui, sans-serif;
-  font-size: 0.88rem;
-  font-weight: 500;
+  font-size: 0.82rem;
+  font-weight: 600;
   padding: 0.9rem 2.25rem;
   border-radius: 2px;
   border: 2px solid var(--frost-deep);
   cursor: pointer;
   transition: all 0.25s ease;
   text-decoration: none;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
