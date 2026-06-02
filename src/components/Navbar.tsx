@@ -53,7 +53,7 @@ export default function Navbar() {
         >
           {/* Logo */}
          <Link href="/" style={{ textDecoration: 'none', flexShrink: 0 }}><img
-    src="/kt-header-logo.png"
+    src="/header-kt-logo.png"
     alt="Kynetra Tech"
     style={{ height: '48px', width: 'auto', display: 'block' }}
   />
