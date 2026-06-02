@@ -89,7 +89,7 @@ export default function AboutPage() {
 
       {/* ECOSYSTEM */}
       <section style={{ background: 'var(--deep-ink)', padding: '6rem 0' }}>
-        <div className="container" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }} className="ecosystem-grid">
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }} className="ecosystem-grid">
           <div>
             <span className="label" style={{ display: 'block', marginBottom: '1.25rem' }}>Part of Something Bigger</span>
             <h2 style={{ color: 'var(--white)', marginBottom: '1.5rem' }}>Services and products.<br /><span className="headline-accent">Two ways we help.</span></h2>
