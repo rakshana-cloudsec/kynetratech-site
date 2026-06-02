@@ -1,11 +1,18 @@
 'use client';
 
 const tools = [
-  'GoHighLevel', 'HubSpot', 'Zoho One', 'n8n', 'Make',
-  'Zapier', 'Xero', 'Slack', 'Microsoft 365', 'Google Workspace',
+  { name: 'GoHighLevel', logo: 'https://cdn.brandfetch.io/idgCKsF9Vj/w/400/h/400/theme/dark/icon.jpeg?c=1dxbfHSJFAPEyhd-mlg' },
+  { name: 'HubSpot', logo: 'https://cdn.brandfetch.io/idVfYXnBap/w/400/h/400/theme/dark/icon.png?c=1dxbfHSJFAPEyhd-mlg' },
+  { name: 'Zoho', logo: 'https://cdn.brandfetch.io/idJ6SKgSFe/w/400/h/400/theme/dark/icon.png?c=1dxbfHSJFAPEyhd-mlg' },
+  { name: 'n8n', logo: 'https://cdn.brandfetch.io/idksBMpknP/w/400/h/400/theme/dark/icon.png?c=1dxbfHSJFAPEyhd-mlg' },
+  { name: 'Make', logo: 'https://cdn.brandfetch.io/id7wFUP7-m/w/400/h/400/theme/dark/icon.png?c=1dxbfHSJFAPEyhd-mlg' },
+  { name: 'Zapier', logo: 'https://cdn.brandfetch.io/idgkjsrUSj/w/400/h/400/theme/dark/icon.png?c=1dxbfHSJFAPEyhd-mlg' },
+  { name: 'Xero', logo: 'https://cdn.brandfetch.io/idBbBDHNkZ/w/400/h/400/theme/dark/icon.png?c=1dxbfHSJFAPEyhd-mlg' },
+  { name: 'Slack', logo: 'https://cdn.brandfetch.io/idnrCPuv87/w/400/h/400/theme/dark/icon.png?c=1dxbfHSJFAPEyhd-mlg' },
+  { name: 'Microsoft 365', logo: 'https://cdn.brandfetch.io/idchmboHEZ/w/400/h/400/theme/dark/icon.png?c=1dxbfHSJFAPEyhd-mlg' },
+  { name: 'Google Workspace', logo: 'https://cdn.brandfetch.io/id4PlDPnlv/w/400/h/400/theme/dark/icon.png?c=1dxbfHSJFAPEyhd-mlg' },
 ];
 
-// Double the array so the loop is seamless
 const doubled = [...tools, ...tools];
 
 export default function ToolsMarquee() {
@@ -13,40 +20,65 @@ export default function ToolsMarquee() {
     <section style={{
       borderBottom: '1px solid var(--frost)',
       borderTop: '1px solid var(--frost)',
-      padding: '2rem 0',
+      padding: '2.5rem 0',
       background: 'var(--white)',
       overflow: 'hidden',
     }}>
-      <div style={{
-        display: 'flex',
-        alignItems: 'center',
-        gap: '2.5rem',
-        marginBottom: '1.25rem',
-        paddingLeft: '2.5rem',
+      {/* Centred label */}
+      <p style={{
+        fontFamily: 'DM Mono, monospace',
+        fontSize: '0.68rem',
+        letterSpacing: '0.2em',
+        textTransform: 'uppercase',
+        color: 'var(--slate)',
+        textAlign: 'center',
+        marginBottom: '2rem',
+        fontWeight: 400,
       }}>
-        <span className="label-slate">TOOLS WE BUILD WITH</span>
-      </div>
+        Tools We Build With
+      </p>
 
       <div style={{ position: 'relative', overflow: 'hidden' }}>
         {/* Fade edges */}
         <div style={{
           position: 'absolute', left: 0, top: 0, bottom: 0,
-          width: '120px', zIndex: 2,
+          width: '140px', zIndex: 2,
           background: 'linear-gradient(to right, var(--white), transparent)',
           pointerEvents: 'none',
         }} />
         <div style={{
           position: 'absolute', right: 0, top: 0, bottom: 0,
-          width: '120px', zIndex: 2,
+          width: '140px', zIndex: 2,
           background: 'linear-gradient(to left, var(--white), transparent)',
           pointerEvents: 'none',
         }} />
 
         <div className="marquee-track">
           {doubled.map((tool, i) => (
-            <span key={i} className="marquee-item">
-              {tool}
-            </span>
+            <div key={i} className="marquee-item">
+              <img
+                src={tool.logo}
+                alt={tool.name}
+                style={{
+                  height: '32px',
+                  width: '32px',
+                  objectFit: 'contain',
+                  borderRadius: '6px',
+                  marginBottom: '0.4rem',
+                }}
+                onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+              />
+              <span style={{
+                fontFamily: 'DM Mono, monospace',
+                fontSize: '0.65rem',
+                letterSpacing: '0.08em',
+                color: 'var(--slate)',
+                textTransform: 'uppercase',
+                whiteSpace: 'nowrap',
+              }}>
+                {tool.name}
+              </span>
+            </div>
           ))}
         </div>
       </div>
@@ -57,7 +89,7 @@ export default function ToolsMarquee() {
           align-items: center;
           gap: 0;
           width: max-content;
-          animation: marquee 28s linear infinite;
+          animation: marquee 32s linear infinite;
         }
 
         .marquee-track:hover {
@@ -65,19 +97,17 @@ export default function ToolsMarquee() {
         }
 
         .marquee-item {
-          font-family: 'DM Mono', monospace;
-          font-size: 0.75rem;
-          letter-spacing: 0.1em;
-          color: var(--slate);
-          text-transform: uppercase;
-          padding: 0.5rem 2rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 0.3rem;
+          padding: 0 2.5rem;
           border-right: 1px solid var(--frost);
-          white-space: nowrap;
-          transition: color 0.2s ease;
+          transition: opacity 0.2s ease;
         }
 
         .marquee-item:hover {
-          color: var(--teal);
+          opacity: 0.7;
         }
 
         @keyframes marquee {

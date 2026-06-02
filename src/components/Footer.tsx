@@ -38,37 +38,11 @@ export default function Footer() {
           {/* Col 1 — Brand */}
           <div>
             {/* Logo */}
-            <div style={{ marginBottom: '1.25rem' }}>
-              <span style={{
-                fontFamily: 'var(--font-serif)',
-                fontSize: '1.5rem',
-                fontWeight: 500,
-                color: 'var(--white)',
-                display: 'block',
-                lineHeight: 1,
-              }}>
-                Kynetra
-              </span>
-              <span style={{
-                display: 'block',
-                width: '100%',
-                height: '1.5px',
-                background: 'var(--teal)',
-                margin: '3px 0',
-              }} />
-              <span style={{
-                fontFamily: 'var(--font-mono)',
-                fontSize: '0.6rem',
-                fontWeight: 500,
-                color: 'var(--white)',
-                letterSpacing: '0.22em',
-                textTransform: 'uppercase',
-                display: 'block',
-              }}>
-                TECH
-              </span>
-            </div>
-
+           <img
+  src="/kt-logo.png"
+  alt="Kynetra Tech"
+  style={{ height: '52px', width: 'auto', display: 'block', marginBottom: '1.25rem', filter: 'brightness(0) invert(1)' }}
+/>
             <p style={{
               fontFamily: 'var(--font-sans)',
               fontSize: '0.9rem',

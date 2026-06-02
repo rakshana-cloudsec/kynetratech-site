@@ -52,30 +52,12 @@ export default function Navbar() {
           }}
         >
           {/* Logo */}
-          <Link href="/" style={{ textDecoration: 'none', flexShrink: 0 }}>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', lineHeight: 1 }}>
-              <span style={{
-                fontFamily: 'var(--font-serif)',
-                fontSize: '1.45rem',
-                fontWeight: 500,
-                color: 'var(--deep-ink)',
-                letterSpacing: '0.02em',
-              }}>
-                Kynetra
-              </span>
-              <span className="teal-rule" style={{ width: '100%' }} />
-              <span style={{
-                fontFamily: 'var(--font-mono)',
-                fontSize: '0.6rem',
-                fontWeight: 500,
-                color: 'var(--deep-ink)',
-                letterSpacing: '0.2em',
-                textTransform: 'uppercase',
-              }}>
-                TECH
-              </span>
-            </div>
-          </Link>
+         <Link href="/" style={{ textDecoration: 'none', flexShrink: 0 }}><img
+    src="/kt-logo.png"
+    alt="Kynetra Tech"
+    style={{ height: '48px', width: 'auto', display: 'block' }}
+  />
+</Link>
 
           {/* Desktop Nav Links — centred */}
           <div style={{
