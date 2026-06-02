@@ -1,16 +1,8 @@
 'use client';
 
 const tools = [
-  { name: 'GoHighLevel', logo: 'https://cdn.brandfetch.io/idgCKsF9Vj/w/400/h/400/theme/dark/icon.jpeg?c=1dxbfHSJFAPEyhd-mlg' },
-  { name: 'HubSpot', logo: 'https://cdn.brandfetch.io/idVfYXnBap/w/400/h/400/theme/dark/icon.png?c=1dxbfHSJFAPEyhd-mlg' },
-  { name: 'Zoho', logo: 'https://cdn.brandfetch.io/idJ6SKgSFe/w/400/h/400/theme/dark/icon.png?c=1dxbfHSJFAPEyhd-mlg' },
-  { name: 'n8n', logo: 'https://cdn.brandfetch.io/idksBMpknP/w/400/h/400/theme/dark/icon.png?c=1dxbfHSJFAPEyhd-mlg' },
-  { name: 'Make', logo: 'https://cdn.brandfetch.io/id7wFUP7-m/w/400/h/400/theme/dark/icon.png?c=1dxbfHSJFAPEyhd-mlg' },
-  { name: 'Zapier', logo: 'https://cdn.brandfetch.io/idgkjsrUSj/w/400/h/400/theme/dark/icon.png?c=1dxbfHSJFAPEyhd-mlg' },
-  { name: 'Xero', logo: 'https://cdn.brandfetch.io/idBbBDHNkZ/w/400/h/400/theme/dark/icon.png?c=1dxbfHSJFAPEyhd-mlg' },
-  { name: 'Slack', logo: 'https://cdn.brandfetch.io/idnrCPuv87/w/400/h/400/theme/dark/icon.png?c=1dxbfHSJFAPEyhd-mlg' },
-  { name: 'Microsoft 365', logo: 'https://cdn.brandfetch.io/idchmboHEZ/w/400/h/400/theme/dark/icon.png?c=1dxbfHSJFAPEyhd-mlg' },
-  { name: 'Google Workspace', logo: 'https://cdn.brandfetch.io/id4PlDPnlv/w/400/h/400/theme/dark/icon.png?c=1dxbfHSJFAPEyhd-mlg' },
+  'GoHighLevel', 'HubSpot', 'Zoho One', 'n8n', 'Make',
+  'Zapier', 'Xero', 'Slack', 'Microsoft 365', 'Google Workspace',
 ];
 
 const doubled = [...tools, ...tools];
@@ -24,7 +16,6 @@ export default function ToolsMarquee() {
       background: 'var(--white)',
       overflow: 'hidden',
     }}>
-      {/* Centred label */}
       <p style={{
         fontFamily: 'DM Mono, monospace',
         fontSize: '0.68rem',
@@ -39,7 +30,6 @@ export default function ToolsMarquee() {
       </p>
 
       <div style={{ position: 'relative', overflow: 'hidden' }}>
-        {/* Fade edges */}
         <div style={{
           position: 'absolute', left: 0, top: 0, bottom: 0,
           width: '140px', zIndex: 2,
@@ -56,28 +46,8 @@ export default function ToolsMarquee() {
         <div className="marquee-track">
           {doubled.map((tool, i) => (
             <div key={i} className="marquee-item">
-              <img
-                src={tool.logo}
-                alt={tool.name}
-                style={{
-                  height: '32px',
-                  width: '32px',
-                  objectFit: 'contain',
-                  borderRadius: '6px',
-                  marginBottom: '0.4rem',
-                }}
-                onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
-              />
-              <span style={{
-                fontFamily: 'DM Mono, monospace',
-                fontSize: '0.65rem',
-                letterSpacing: '0.08em',
-                color: 'var(--slate)',
-                textTransform: 'uppercase',
-                whiteSpace: 'nowrap',
-              }}>
-                {tool.name}
-              </span>
+              <span className="marquee-dot" />
+              <span className="marquee-name">{tool}</span>
             </div>
           ))}
         </div>
@@ -87,9 +57,8 @@ export default function ToolsMarquee() {
         .marquee-track {
           display: flex;
           align-items: center;
-          gap: 0;
           width: max-content;
-          animation: marquee 32s linear infinite;
+          animation: marquee 36s linear infinite;
         }
 
         .marquee-track:hover {
@@ -98,16 +67,36 @@ export default function ToolsMarquee() {
 
         .marquee-item {
           display: flex;
-          flex-direction: column;
           align-items: center;
-          gap: 0.3rem;
-          padding: 0 2.5rem;
+          gap: 1rem;
+          padding: 0 2.75rem;
           border-right: 1px solid var(--frost);
           transition: opacity 0.2s ease;
+          cursor: default;
         }
 
-        .marquee-item:hover {
-          opacity: 0.7;
+        .marquee-item:hover .marquee-name {
+          color: var(--teal);
+        }
+
+        .marquee-dot {
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background: var(--teal);
+          flex-shrink: 0;
+          opacity: 0.5;
+        }
+
+        .marquee-name {
+          font-family: 'Jost', system-ui, sans-serif;
+          font-size: 0.85rem;
+          font-weight: 500;
+          letter-spacing: 0.06em;
+          color: var(--deep-ink);
+          white-space: nowrap;
+          transition: color 0.2s ease;
+          text-transform: uppercase;
         }
 
         @keyframes marquee {
