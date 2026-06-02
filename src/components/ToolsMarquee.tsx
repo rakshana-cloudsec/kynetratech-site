@@ -1,8 +1,16 @@
 'use client';
 
 const tools = [
-  'GoHighLevel', 'HubSpot', 'Zoho One', 'n8n', 'Make',
-  'Zapier', 'Xero', 'Slack', 'Microsoft 365', 'Google Workspace',
+  { name: 'GoHighLevel', logo: '/tools/gohighlevel.png', dark: true },
+  { name: 'HubSpot', logo: '/tools/hubspot.png', dark: false },
+  { name: 'Zoho', logo: '/tools/zoho.png', dark: false },
+  { name: 'n8n', logo: '/tools/n8n.png', dark: false },
+  { name: 'Make', logo: '/tools/make.png', dark: true },
+  { name: 'Zapier', logo: '/tools/zapier.png', dark: false },
+  { name: 'Xero', logo: '/tools/xero.png', dark: true },
+  { name: 'Slack', logo: '/tools/slack.png', dark: false },
+  { name: 'Microsoft', logo: '/tools/microsoft.png', dark: false },
+  { name: 'Google Workspace', logo: '/tools/google.png', dark: true },
 ];
 
 const doubled = [...tools, ...tools];
@@ -46,8 +54,30 @@ export default function ToolsMarquee() {
         <div className="marquee-track">
           {doubled.map((tool, i) => (
             <div key={i} className="marquee-item">
-              <span className="marquee-dot" />
-              <span className="marquee-name">{tool}</span>
+              <div style={{
+                background: tool.dark ? '#111' : 'transparent',
+                borderRadius: '8px',
+                padding: tool.dark ? '8px 12px' : '0',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                height: '44px',
+              }}>
+                <img
+                  src={tool.logo}
+                  alt={tool.name}
+                  style={{
+                    height: '28px',
+                    width: 'auto',
+                    maxWidth: '130px',
+                    objectFit: 'contain',
+                    display: 'block',
+                    filter: 'grayscale(100%) opacity(70%)',
+                    transition: 'filter 0.3s ease',
+                  }}
+                  className="marquee-logo"
+                />
+              </div>
             </div>
           ))}
         </div>
@@ -68,35 +98,13 @@ export default function ToolsMarquee() {
         .marquee-item {
           display: flex;
           align-items: center;
-          gap: 1rem;
-          padding: 0 2.75rem;
+          justify-content: center;
+          padding: 0 3rem;
           border-right: 1px solid var(--frost);
-          transition: opacity 0.2s ease;
-          cursor: default;
         }
 
-        .marquee-item:hover .marquee-name {
-          color: var(--teal);
-        }
-
-        .marquee-dot {
-          width: 5px;
-          height: 5px;
-          border-radius: 50%;
-          background: var(--teal);
-          flex-shrink: 0;
-          opacity: 0.5;
-        }
-
-        .marquee-name {
-          font-family: 'Jost', system-ui, sans-serif;
-          font-size: 0.85rem;
-          font-weight: 500;
-          letter-spacing: 0.06em;
-          color: var(--deep-ink);
-          white-space: nowrap;
-          transition: color 0.2s ease;
-          text-transform: uppercase;
+        .marquee-item:hover .marquee-logo {
+          filter: grayscale(0%) opacity(100%);
         }
 
         @keyframes marquee {
